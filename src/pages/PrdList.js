@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import styled from '../style';
 
 import TestNavi from '../components/TestNavi';
 
@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   margin: auto;
 `;
 
-const Main = () => {
+const PrdList = () => {
   return (
     <Wrapper>
       <TestNavi />
@@ -17,4 +17,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default PrdList;

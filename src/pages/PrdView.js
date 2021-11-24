@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import styled from '../style';
+import { useParams } from 'react-router-dom';
 
 import TestNavi from '../components/TestNavi';
 
@@ -8,13 +9,14 @@ const Wrapper = styled.div`
   margin: auto;
 `;
 
-const Main = () => {
+const PrdView = () => {
+  const params = useParams();
   return (
     <Wrapper>
       <TestNavi />
-      <h1>Product View</h1>
+      <h1>Product View {params.id}</h1>
     </Wrapper>
   );
 };
 
-export default Main;
+export default PrdView;

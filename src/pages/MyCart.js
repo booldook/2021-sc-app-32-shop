@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import styled from '../style';
+import { useSearchParams } from 'react-router-dom';
 
 import TestNavi from '../components/TestNavi';
 
@@ -8,13 +9,14 @@ const Wrapper = styled.div`
   margin: auto;
 `;
 
-const Main = () => {
+const MyCart = () => {
+  const [query] = useSearchParams();
   return (
     <Wrapper>
       <TestNavi />
-      <h1>Cart</h1>
+      <h1>Cart {query.get('page')}</h1>
     </Wrapper>
   );
 };
 
-export default Main;
+export default MyCart;
