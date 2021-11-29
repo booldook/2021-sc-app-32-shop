@@ -30,7 +30,7 @@ export const treeSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getAllTree.fulfilled, (state, { payload }) => {
-        console.log('fulfilled', payload);
+        // console.log('fulfilled', payload);
         state.allTree = payload;
       })
       .addCase(getAllTree.rejected, (state, { payload }) => {

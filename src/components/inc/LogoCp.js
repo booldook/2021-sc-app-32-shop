@@ -1,12 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from '@emotion/styled';
 
-import LogoImg from '../../assets/img/ella-surf-logo-b.png';
+import LogoImgBlack from '../../assets/img/ella-surf-logo-b.png';
+import LogoImgWhite from '../../assets/img/ella-surf-logo-w.png';
 
-const LogoCp = ({ type }) => {
+const Img = styled.img`
+  max-width: 70px;
+`;
+
+const LogoCp = ({ type = 'B' }) => {
   return (
     <Link to="/">
-      <img src={LogoImg} alt="" />
+      {type === 'B' ? (
+        <Img src={LogoImgBlack} alt="Logo" />
+      ) : (
+        <Img src={LogoImgWhite} alt="Logo" />
+      )}
     </Link>
   );
 };
