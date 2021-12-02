@@ -1,47 +1,25 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import Slider from 'react-slick';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from 'react';
 import styled from '../../style';
 
-const Wrapper = styled.section`
-  width: 100%;
-  overflow-x: hidden;
-  padding-bottom: 3em;
+const Wrapper = styled.div`
+  position: relative;
+`;
+const Contents = styled.ul`
+  border: 10px solid red;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
 `;
 
-const BannerCp = () => {
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_BANNER_URL)
-      .then(({ data }) => {
-        console.log(data.list);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+const BannerCp = ({ title, price, content, link, file }) => {
   return (
     <Wrapper>
-      <Slider {...settings}>
-        <div>
-          <img src="/img/banner-slider-1.jpg" className="w100" alt="Main Banner" />
-        </div>
-        <div>
-          <img src="/img/banner-slider-1.jpg" className="w100" alt="Main Banner" />
-        </div>
-      </Slider>
+      <Contents></Contents>
+      <img src={file} className="w100" alt={title} />
     </Wrapper>
   );
 };
 
-export default React.memo(BannerCp);
+export default BannerCp;
