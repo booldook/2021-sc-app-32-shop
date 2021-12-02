@@ -1,22 +1,70 @@
 import React from 'react';
-import styled from '../../style';
+import styled, { css, color } from '../../style';
 
 const Wrapper = styled.div`
   position: relative;
 `;
+
+const positionStyle = ({ pos }) => {
+  if (pos === 'L')
+    return css`
+      left: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: left;
+    `;
+  else if (pos === 'R')
+    return css`
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: right;
+    `;
+  else
+    return css`
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-50%);
+      text-align: center;
+    `;
+};
+
 const Contents = styled.ul`
-  border: 10px solid red;
-  width: 300px;
-  height: 300px;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.35);
   position: absolute;
-  top: 20%;
-  left: 10%;
+  padding: 2em;
+  ${positionStyle}
+`;
+
+const Title = styled.h3`
+  font-size: 2em;
+  font-weight: bold;
+  color: ${color.black};
+  margin-bottom: 0.75em;
+`;
+
+const Price = styled.div`
+  font-size: 1.25em;
+  font-weight: bold;
+  color: ${color.primary};
+  margin-bottom: 1.5em;
+`;
+
+const Content = styled.div`
+  font-size: 1em;
+  color: ${color.grey};
+  margin-bottom: 1.5em;
 `;
 
 const BannerCp = ({ title, price, content, link, file, pos }) => {
   return (
     <Wrapper>
-      <Contents pos={pos}></Contents>
+      <Contents pos={pos}>
+        <Title>{title}</Title>
+        <Price>From {price}</Price>
+        <Content>{content}</Content>
+      </Contents>
       <img src={file} className="w100" alt={title} />
     </Wrapper>
   );
