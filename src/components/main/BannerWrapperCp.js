@@ -24,12 +24,13 @@ const BannerWrapperCp = () => {
         const { content: contents, BoardFiles } = data.list;
         setBanner(
           contents.split('^^').map((v, i) => {
-            let [title, price, content, link] = v.split('|');
+            let [title, price, content, link, pos] = v.split('|');
             return {
               title,
               price,
               content,
               link,
+              pos,
               file: filePath(BoardFiles[i].saveName),
             };
           })

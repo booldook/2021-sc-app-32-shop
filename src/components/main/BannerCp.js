@@ -13,10 +13,10 @@ const Contents = styled.ul`
   left: 10%;
 `;
 
-const BannerCp = ({ title, price, content, link, file }) => {
+const BannerCp = ({ title, price, content, link, file, pos }) => {
   return (
     <Wrapper>
-      <Contents></Contents>
+      <Contents pos={pos}></Contents>
       <img src={file} className="w100" alt={title} />
     </Wrapper>
   );
