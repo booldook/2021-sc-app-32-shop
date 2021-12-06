@@ -8,6 +8,7 @@ import ButtonCp from '../common/ButtonCp';
 import { filePath } from '../../modules/util';
 
 const Wrapper = styled.li`
+  position: relative;
   cursor: pointer;
   width: 19%;
   margin: 0 1% 1% 0;
@@ -43,6 +44,15 @@ const ImageWrapper = styled.div`
   }
 `;
 
+const ButtonWrapper = styled.div`
+  padding: 0.5em;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
 const PrdCp = ({ title, ProductFiles }) => {
   return (
     <Wrapper>
@@ -62,7 +72,9 @@ const PrdCp = ({ title, ProductFiles }) => {
               width="100%"
             />
           )}
-          <ButtonCp txt="ADD TO CART" />
+          <ButtonWrapper>
+            <ButtonCp txt="ADD TO CART" w="100%" />
+          </ButtonWrapper>
         </div>
       </ImageWrapper>
     </Wrapper>
