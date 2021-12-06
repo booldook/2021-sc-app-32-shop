@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styled, { media } from '../../style';
+import styled, { color, media } from '../../style';
 
 import ImageCp from '../common/ImageCp';
 import VideoCp from '../common/VideoCp';
@@ -73,7 +73,13 @@ const PrdCp = ({ title, ProductFiles }) => {
             />
           )}
           <ButtonWrapper>
-            <ButtonCp txt="ADD TO CART" w="100%" />
+            <ButtonCp
+              txt="ADD TO CART"
+              w="100%"
+              colorHover={color.info}
+              bgHover={color.dark}
+              bold="bold"
+            />
           </ButtonWrapper>
         </div>
       </ImageWrapper>

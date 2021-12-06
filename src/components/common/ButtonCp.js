@@ -7,6 +7,7 @@ const Button = styled.div`
   display: inline-block;
   text-align: center;
   padding: 1em;
+  border-radius: 5px;
   width: ${(props) => props.w};
   color: ${(props) => props.color};
   background-color: ${(props) => props.bg};
