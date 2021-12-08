@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { color } from '../../style';
 
 const ColorName = styled.li`
-  width: 80px;
+  width: 60px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

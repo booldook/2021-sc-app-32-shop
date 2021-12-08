@@ -12,6 +12,7 @@ import LocationCp from './LocationCp';
 import TitleCp from './TitleCp';
 import PriceCp from './PriceCp';
 import ColorCp from './ColorCp';
+import ColorNameCp from './ColorNameCp';
 
 const Wrapper = styled.li`
   position: relative;
@@ -85,16 +86,16 @@ const PrdCp = ({
 }) => {
   /* state ********/
   const [location, setLocation] = useState('Shop');
-  const [color, setColor] = useState([]);
-  const [section, setSection] = useState([]);
-  const [star, setStar] = useState(0.0);
+  const [colorName, setColorName] = useState('');
+  const [colorCode, setColorCode] = useState('');
+  // const [section, setSection] = useState([]);
   const trees = useSelector((state) => state.tree.allTree);
   const colors = useSelector((state) => state.color.allColor);
   const sections = useSelector((state) => state.section.allSection);
 
   /* 데이터 가공 ********/
   useEffect(() => {
-    // 복잡한 곳
+    // location
     let cates = Cates[0].parents.split(',');
     let _location = 'Shop';
     if (cates[0]) {
@@ -103,7 +104,10 @@ const PrdCp = ({
     }
     _location += ' - ' + Cates[0].name;
     setLocation(_location);
-  }, [Cates, trees]);
+    // colorName/Code
+    setColorName(Colors[0].name);
+    setColorCode(Colors[0].code);
+  }, [Cates, trees, Colors]);
 
   /* render ********/
   return (
@@ -138,7 +142,10 @@ const PrdCp = ({
       <Favorite size="1em" />
       <InfoWrap>
         <LocationCp title={location} />
-        <TitleCp title={title} />
+        <div className="w-100 d-flex justify-content-between align-items-center">
+          <TitleCp title={title} />
+          <ColorNameCp name={colorName} code={colorCode} />
+        </div>
         <PriceCp price={priceSale} />
         <ColorCp colors={Colors} />
       </InfoWrap>
