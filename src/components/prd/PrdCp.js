@@ -100,7 +100,7 @@ const PrdCp = ({ title, Cates, ProductFiles }) => {
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
-        <LocationCp location="Surf - 남성의류" />
+        <LocationCp cateId={Cates[Math.floor(Math.round(Cates.length - 1))].cid} />
       </InfoWrap>
     </Wrapper>
   );
