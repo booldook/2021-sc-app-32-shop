@@ -10,6 +10,8 @@ import ButtonCp from '../common/ButtonCp';
 import FavoriteCp from '../common/FavoriteCp';
 import LocationCp from './LocationCp';
 import TitleCp from './TitleCp';
+import PriceCp from './PriceCp';
+import ColorCp from './ColorCp';
 
 const Wrapper = styled.li`
   position: relative;
@@ -74,7 +76,7 @@ const ButtonWrapper = styled.div`
 const PrdCp = ({
   title,
   star: starData,
-  price,
+  priceSale,
   priceOrigin,
   Cates,
   Colors,
@@ -96,8 +98,8 @@ const PrdCp = ({
     let cates = Cates[0].parents.split(',');
     let _location = 'Shop';
     if (cates[0]) {
-      let [{ title }] = trees.filter((v) => v.id === cates[0]);
-      _location += ' - ' + title;
+      let [{ title: _title }] = trees.filter((v) => v.id === cates[0]);
+      _location += ' - ' + _title;
     }
     _location += ' - ' + Cates[0].name;
     setLocation(_location);
@@ -137,6 +139,8 @@ const PrdCp = ({
       <InfoWrap>
         <LocationCp title={location} />
         <TitleCp title={title} />
+        <PriceCp price={priceSale} />
+        <ColorCp colors={Colors} />
       </InfoWrap>
     </Wrapper>
   );
