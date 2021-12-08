@@ -109,6 +109,11 @@ const PrdCp = ({
     setColorCode(Colors[0].code);
   }, [Cates, trees, Colors]);
 
+  /* Event ********/
+  const listenClick = useCallback((id) => {
+    console.log(id);
+  }, []);
+
   /* render ********/
   return (
     <Wrapper>
@@ -144,10 +149,10 @@ const PrdCp = ({
         <LocationCp title={location} />
         <div className="w-100 d-flex justify-content-between align-items-center">
           <TitleCp title={title} />
-          <ColorNameCp name={colorName} code={colorCode} />
+          {Colors.length ? <ColorNameCp name={colorName} code={colorCode} /> : ''}
         </div>
         <PriceCp price={priceSale} />
-        <ColorCp colors={Colors} />
+        {Colors.length ? <ColorCp colors={Colors} listenClick={listenClick} /> : ''}
       </InfoWrap>
     </Wrapper>
   );
