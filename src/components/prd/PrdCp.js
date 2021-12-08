@@ -90,6 +90,7 @@ const PrdCp = ({
   /* 데이터 가공 ********/
   useEffect(() => {
     // 복잡한 곳
+    // let myColor = colors.filter(v => { })
   }, [colors, sections, Cates]);
 
   /* render ********/
