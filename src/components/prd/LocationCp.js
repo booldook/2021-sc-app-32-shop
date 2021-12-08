@@ -11,11 +11,11 @@ const Location = styled(Underline)`
 const LocationCp = ({ cateId }) => {
   const [treeName, setTreeName] = useState('');
   const allTree = useSelector((state) => state.tree.allTree);
-  useEffect(() => {
+  /* useEffect(() => {
     const [{ title }] = allTree.filter((v) => v.id === cateId);
     setTreeName('Shop - ' + title);
-  }, [allTree, cateId]);
-  return <Location color={color.lightBlack}>{treeName}</Location>;
+  }, [allTree, cateId]); */
+  return <Location color={color.lightBlack}>TreeName</Location>;
 };
 
 export default React.memo(LocationCp);
