@@ -100,7 +100,7 @@ const PrdCp = ({ title, Cates, ProductFiles }) => {
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
-        <LocationCp cateId={Cates[Math.floor(Math.round(Cates.length - 1))].cid} />
+        <LocationCp cateId={Cates[Math.floor(Math.random(Cates.length - 1))].cid} />
       </InfoWrap>
     </Wrapper>
   );
