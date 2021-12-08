@@ -110,8 +110,9 @@ const PrdCp = ({
   }, [Cates, trees, Colors]);
 
   /* Event ********/
-  const listenClick = useCallback((id) => {
-    console.log(id);
+  const listenClick = useCallback((_name, _color) => {
+    setColorName(_name);
+    setColorCode(_color);
   }, []);
 
   /* render ********/
