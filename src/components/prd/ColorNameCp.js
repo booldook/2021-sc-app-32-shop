@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { color } from '../../style';
 
-const ColorName = styled.li`
+const ColorName = styled.div`
   width: 60px;
   overflow: hidden;
   white-space: nowrap;

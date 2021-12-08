@@ -99,8 +99,8 @@ const PrdCp = ({
     let cates = Cates[0].parents.split(',');
     let _location = 'Shop';
     if (cates[0]) {
-      let [{ title: _title }] = trees.filter((v) => v.id === cates[0]);
-      _location += ' - ' + _title;
+      let data = trees.filter((v) => v.id === cates[0]);
+      if (data.length) _location += ' - ' + data[0].title;
     }
     _location += ' - ' + Cates[0].name;
     setLocation(_location);
