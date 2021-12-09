@@ -6,6 +6,7 @@ import ImageCp from '../common/ImageCp';
 import TitleCp from './TitleCp';
 import PriceCp from './PriceCp';
 import ContentCp from './ContentCp';
+import ButtonCp from '../common/ButtonCp';
 
 const Wrapper = styled.li`
   position: relative;
@@ -45,6 +46,12 @@ const ImageWrapper = styled.div`
   }
 `;
 
+const Button = styled(ButtonCp)`
+  width: 60%;
+  margin: 1em auto;
+  padding: 1em;
+`;
+
 const SurfCp = ({ title, price, content, src, link }) => {
   return (
     <Wrapper>
@@ -55,6 +62,12 @@ const SurfCp = ({ title, price, content, src, link }) => {
         <TitleCp title={title} />
         <ContentCp content={content} />
         <PriceCp price={price} size="0.875em" />
+        <Button
+          txt="SHOP NOW"
+          colorHover={color.light}
+          bgHover={color.black}
+          bold="normal"
+        />
       </InfoWrap>
     </Wrapper>
   );

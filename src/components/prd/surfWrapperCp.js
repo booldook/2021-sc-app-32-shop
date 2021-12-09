@@ -35,7 +35,6 @@ const data = [
 ];
 
 const SurfWrapper = styled.ul`
-  margin-top: 1em;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -55,7 +54,7 @@ const Title = styled.h2`
   font-size: 1.5em;
   font-weight: 500;
   font-family: ${font.en};
-  margin: 2em 0 1em 0;
+  margin: 3em 0 2em 0;
   text-align: center;
 `;
 
