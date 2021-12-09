@@ -3,6 +3,37 @@ import styled, { media, font, color } from '../../style';
 
 import SurfCp from './SurfCp';
 
+const data = [
+  {
+    title: 'All Rounders',
+    price: '$219.00',
+    content: 'Quisquemos sodales suscipit tortor condimentum from',
+    src: '/img/201206_0001.jpg',
+    link: '/prd/6',
+  },
+  {
+    title: 'Performances',
+    price: '$219.00',
+    content: 'Quisquemos sodales suscipit tortor condimentum from',
+    src: '/img/201206_0002.jpg',
+    link: '/prd/7',
+  },
+  {
+    title: 'Longboards',
+    price: '$219.00',
+    content: 'Quisquemos sodales suscipit tortor condimentum from',
+    src: '/img/201206_0003.jpg',
+    link: '/prd/8',
+  },
+  {
+    title: 'Retro Surfboards',
+    price: '$219.00',
+    content: 'Quisquemos sodales suscipit tortor condimentum from',
+    src: '/img/201206_0004.jpg',
+    link: '/prd/9',
+  },
+];
+
 const SurfWrapper = styled.ul`
   margin-top: 1em;
   display: flex;
@@ -32,7 +63,7 @@ const SurfWrapperCp = () => {
   const [surf, setSurf] = useState([]);
 
   useEffect(() => {
-    (async () => {})();
+    setSurf(data);
   }, []);
 
   return (
