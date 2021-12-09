@@ -1,0 +1,50 @@
+import React, { useEffect, useState } from 'react';
+import styled, { media, font, color } from '../../style';
+
+import SurfCp from './SurfCp';
+
+const SurfWrapper = styled.ul`
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 101%;
+  @media ${media.md} {
+    width: 101.5%;
+  }
+  @media ${media.sm} {
+    width: 102%;
+  }
+  @media ${media.xs} {
+    width: 102.5%;
+  }
+`;
+
+const Title = styled.h2`
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: ${font.en};
+  margin: 2em 0 1em 0;
+  text-align: center;
+`;
+
+const SurfWrapperCp = () => {
+  const [surf, setSurf] = useState([]);
+
+  useEffect(() => {
+    (async () => {})();
+  }, []);
+
+  return (
+    <div>
+      <Title>Featured Collections</Title>
+      <SurfWrapper>
+        {surf.map((v, i) => (
+          <SurfCp {...v} key={i} />
+        ))}
+      </SurfWrapper>
+    </div>
+  );
+};
+
+export default React.memo(SurfWrapperCp);
