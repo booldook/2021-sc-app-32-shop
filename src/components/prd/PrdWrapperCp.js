@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import styled, { media, font, color } from '../../style';
+import styled, { media, font, color, css } from '../../style';
+import FadeLoader from 'react-spinners/FadeLoader';
 
 import { prdApi } from '../../modules/api';
 import PrdCp from './PrdCp';
@@ -37,9 +38,16 @@ const Button = styled(ButtonCp)`
   padding: 1em 0;
 `;
 
+const loaderCss = css`
+  display: block;
+  margin: 0 auto;
+  height: 80px;
+`;
+
 const PrdWrapperCp = () => {
   const [prd, setPrd] = useState([]);
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -48,8 +56,10 @@ const PrdWrapperCp = () => {
   }, []);
 
   const onClick = useCallback(async () => {
+    setIsLoading(true);
     setPage(page + 1);
     setPrd([...prd, ...(await prdApi({ page }))]);
+    setIsLoading(false);
   }, [page, prd]);
 
   return (
@@ -60,6 +70,12 @@ const PrdWrapperCp = () => {
           <PrdCp {...v} key={i} />
         ))}
       </PrdWrapper>
+      <FadeLoader
+        color={color.primary}
+        loading={isLoading}
+        css={loaderCss}
+        size={60}
+      />
       <Button
         txt="SHOW MORE"
         colorHover={color.light}
