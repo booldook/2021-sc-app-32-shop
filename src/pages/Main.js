@@ -18,8 +18,9 @@ const Main = () => {
       <HeaderCp />
       <BannerWrapperCp />
       <NoticeWrapperCp />
-      <ParallaxCp />
+      <ParallaxCp id="242" />
       <PrdWrapperCp />
+      <ParallaxCp id="243" />
     </Wrapper>
   );
 };

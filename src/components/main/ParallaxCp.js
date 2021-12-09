@@ -8,11 +8,11 @@ const Wrapper = styled.section`
   margin-top: 1em;
 `;
 
-const ParallaxCp = () => {
+const ParallaxCp = ({ id }) => {
   const [banner, setBanner] = useState(null);
   useEffect(() => {
     (async () => {
-      const [data] = await bannerApi(242);
+      const [data] = await bannerApi(id);
       setBanner(data);
     })();
   }, []);
