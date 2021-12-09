@@ -56,12 +56,15 @@ const ImageWrapper = styled.div`
     position: absolute;
     top: 0;
     opacity: 0;
-    transition: all 0.5s;
   }
+`;
+
+const HoverImg = styled.div`
+  display: block;
+  transition: opacity 0.5s;
+  opacity: 0;
   &:hover {
-    & > :nth-of-type(2) {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 `;
 
@@ -72,6 +75,8 @@ const ButtonWrapper = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+  transition: all 0.5s;
+  opacity: ${(props) => props.isEnter};
 `;
 
 const PrdCp = ({
@@ -89,9 +94,8 @@ const PrdCp = ({
   const [colorName, setColorName] = useState('');
   const [colorCode, setColorCode] = useState('');
   // const [section, setSection] = useState([]);
+  const [isEnter, setIsEnter] = useState(0);
   const trees = useSelector((state) => state.tree.allTree);
-  const colors = useSelector((state) => state.color.allColor);
-  const sections = useSelector((state) => state.section.allSection);
 
   /* 데이터 가공 ********/
   useEffect(() => {
@@ -116,12 +120,20 @@ const PrdCp = ({
     setColorCode(_color);
   }, []);
 
+  const onEnter = useCallback((e) => {
+    setIsEnter(1);
+  }, []);
+
+  const onLeave = useCallback((e) => {
+    setIsEnter(0);
+  }, []);
+
   /* render ********/
   return (
-    <Wrapper>
+    <Wrapper onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <ImageWrapper>
         <ImageCp alt={title} src={filePath(ProductFiles[0].saveName)} width="100%" />
-        <div>
+        <HoverImg>
           {ProductFiles[1].saveName.includes('.mp4') ? (
             <VideoCp
               alt={title}
@@ -135,16 +147,16 @@ const PrdCp = ({
               width="100%"
             />
           )}
-          <ButtonWrapper>
-            <ButtonCp
-              txt="ADD TO CART"
-              width="100%"
-              colorHover={color.info}
-              bgHover={color.dark}
-              bold="bold"
-            />
-          </ButtonWrapper>
-        </div>
+        </HoverImg>
+        <ButtonWrapper isEnter={isEnter}>
+          <ButtonCp
+            txt="ADD TO CART"
+            width="100%"
+            colorHover={color.info}
+            bgHover={color.dark}
+            bold="bold"
+          />
+        </ButtonWrapper>
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
