@@ -43,15 +43,13 @@ const PrdWrapperCp = () => {
 
   useEffect(() => {
     (async () => {
-      setPrd(await prdApi({ page }));
+      setPrd(await prdApi({ page: 1 }));
     })();
-  }, [page]);
+  }, []);
 
   const onClick = useCallback(async () => {
     setPage(page + 1);
-    let prds = [...prd, ...(await prdApi({ page }))];
-    console.log(prds);
-    setPrd(prds);
+    setPrd([...prd, ...(await prdApi({ page }))]);
   }, [page, prd]);
 
   return (
@@ -59,7 +57,7 @@ const PrdWrapperCp = () => {
       <Title>New Products</Title>
       <PrdWrapper>
         {prd.map((v, i) => (
-          <PrdCp {...v} key={i + v.title} />
+          <PrdCp {...v} key={i} />
         ))}
       </PrdWrapper>
       <Button
