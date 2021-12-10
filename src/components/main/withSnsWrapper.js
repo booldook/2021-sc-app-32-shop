@@ -20,6 +20,24 @@ const sns = {
       title: 'Indonesia',
       content: 'Next trip: 10 May 2021 / 2 - 4 Weeks',
     },
+    {
+      id: 4,
+      src: '/img/201206_1222.jpg',
+      title: 'Viet Nam',
+      content: 'Next trip: 10 May 2021 / 2 - 4 Weeks',
+    },
+    {
+      id: 5,
+      src: '/img/201206_1223.jpg',
+      title: 'Thailand ',
+      content: 'Next trip: 10 May 2021 / 2 - 4 Weeks',
+    },
+    {
+      id: 6,
+      src: '/img/201206_1225.jpg',
+      title: 'Indonesia',
+      content: 'Next trip: 10 May 2021 / 2 - 4 Weeks',
+    },
   ],
   insta: [
     {
@@ -46,6 +64,30 @@ const sns = {
         'Nam tempus turpis at metus cosmo scelerisque placerat nulla deumantos solicitud de felis. Quisquemos sodales suscipit tortor condimentum. Pellentesque diam delos...',
       writer: '- John Smith, @john_smith97, Australia',
     },
+    {
+      id: 4,
+      src: '/img/201206_2333.jpg',
+      star: 4.5,
+      content:
+        'Nam tempus turpis at metus cosmo scelerisque placerat nulla deumantos solicitud de felis. Quisquemos sodales suscipit tortor condimentum. Pellentesque diam delos...',
+      writer: '- John Smith, @john_smith97, Australia',
+    },
+    {
+      id: 5,
+      src: '/img/201206_2334.jpg',
+      star: 4.8,
+      content:
+        'Nam tempus turpis at metus cosmo scelerisque placerat nulla deumantos solicitud de felis. Quisquemos sodales suscipit tortor condimentum. Pellentesque diam delos...',
+      writer: '- John Smith, @john_smith97, Australia',
+    },
+    {
+      id: 6,
+      src: '/img/201206_2335.jpg',
+      star: 3.7,
+      content:
+        'Nam tempus turpis at metus cosmo scelerisque placerat nulla deumantos solicitud de felis. Quisquemos sodales suscipit tortor condimentum. Pellentesque diam delos...',
+      writer: '- John Smith, @john_smith97, Australia',
+    },
   ],
 };
 
@@ -54,7 +96,7 @@ const slideConfig = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  slidesToShow: 1,
+  slidesToShow: 3,
   slidesToScroll: 1,
 };
 
