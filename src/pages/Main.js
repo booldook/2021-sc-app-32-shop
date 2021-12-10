@@ -5,16 +5,13 @@ import HeaderCp from '../components/header/HeaderCp';
 import BannerWrapperCp from '../components/main/BannerWrapperCp';
 import NoticeWrapperCp from '../components/main/NoticeWrapperCp';
 import ParallaxCp from '../components/main/ParallaxCp';
+import CenterParallaxCp from '../components/main/CenterParallaxCp';
 import PrdWrapperCp from '../components/prd/PrdWrapperCp';
 import SurfWrapperCp from '../components/prd/SurfWrapperCp';
 
 const Wrapper = styled(Container)`
   margin: auto;
   height: 10000px;
-`;
-
-const BottomParallax = styled(ParallaxCp)`
-  margin-top: 2em;
 `;
 
 const Main = () => {
@@ -25,7 +22,7 @@ const Main = () => {
       <NoticeWrapperCp />
       <ParallaxCp id="242" />
       <PrdWrapperCp />
-      <BottomParallax id="243" />
+      <CenterParallaxCp id="243" />
       <SurfWrapperCp />
     </Wrapper>
   );
