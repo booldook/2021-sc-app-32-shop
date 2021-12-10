@@ -24,7 +24,7 @@ const Main = () => {
         <BannerWrapperCp />
         <NoticeWrapperCp />
         <ParallaxCp id="242" />
-        <PrdWrapperCp title="New Products" />
+        <PrdWrapperCp title="New Products" button={true} buttonName="SHOW MORE" />
         <CenterParallaxCp id="243" />
         <SurfWrapperCp />
       </Container>

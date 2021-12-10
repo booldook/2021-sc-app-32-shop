@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import styled, { font, color, css } from '../../style';
 import FadeLoader from 'react-spinners/FadeLoader';
 
 import { prdApi } from '../../modules/api';
-// import PrdCp from './PrdCp';
-// import ButtonCp from '../common/ButtonCp';
+import ButtonCp from '../common/ButtonCp';
 
 const loaderCss = css`
   display: block;
@@ -20,15 +19,31 @@ const Title = styled.h2`
   text-align: center;
 `;
 
+const Button = styled(ButtonCp)`
+  display: block;
+  width: 200px;
+  margin: auto;
+  padding: 1em 0;
+`;
+
 const withPrdWrapper = (OriginCompenent) => {
   const Component = (props) => {
     const [prd, setPrd] = useState([]);
+    const [page, setPage] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
       (async () => {
         setPrd(await prdApi({ page: 1 }));
       })();
     }, []);
+
+    const onClick = useCallback(async () => {
+      setIsLoading(true);
+      setPage(page + 1);
+      setPrd([...prd, ...(await prdApi({ page }))]);
+      setIsLoading(false);
+    }, [page, prd]);
 
     const combineProps = { ...props, prd, setPrd, isLoading, setIsLoading };
     return (
@@ -41,6 +56,17 @@ const withPrdWrapper = (OriginCompenent) => {
           css={loaderCss}
           size={60}
         />
+        {props.button ? (
+          <Button
+            txt={props.buttonName}
+            colorHover={color.light}
+            bgHover={color.dark}
+            bold="bold"
+            onClick={onClick}
+          />
+        ) : (
+          ''
+        )}
       </div>
     );
   };

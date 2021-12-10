@@ -44,38 +44,14 @@ const loaderCss = css`
   height: 80px;
 `;
 
-const PrdWrapperCp = () => {
-  const [prd, setPrd] = useState([]);
-  const [page, setPage] = useState(1);
-
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    (async () => {
-      setPrd(await prdApi({ page: 1 }));
-    })();
-  }, []);
-
-  const onClick = useCallback(async () => {
-    setIsLoading(true);
-    setPage(page + 1);
-    setPrd([...prd, ...(await prdApi({ page }))]);
-    setIsLoading(false);
-  }, [page, prd]);
-
+const PrdWrapperCp = (props) => {
   return (
     <div>
       <PrdWrapper>
-        {prd.map((v, i) => (
+        {props.prd.map((v, i) => (
           <PrdCp {...v} key={i} />
         ))}
       </PrdWrapper>
-      <Button
-        txt="SHOW MORE"
-        colorHover={color.light}
-        bgHover={color.dark}
-        bold="bold"
-        onClick={onClick}
-      />
     </div>
   );
 };
