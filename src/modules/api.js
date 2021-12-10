@@ -47,7 +47,7 @@ export const rideApi = async (id) => {
     const { content: contents, files } = data;
     const rs = contents.split('^^').map((v, i) => {
       let [id, title, content] = v.split('|');
-      return { id, title, content, file: filePath(files[i]) };
+      return { id, title, content, src: filePath(files[i]) };
     });
     return rs;
   } catch (err) {
@@ -61,7 +61,7 @@ export const instaApi = async (id) => {
     const { content: contents, files } = data;
     const rs = contents.split('^^').map((v, i) => {
       let [id, star, content, writer] = v.split('|');
-      return { id, star, content, writer, file: filePath(files[i]) };
+      return { id, star, content, writer, src: filePath(files[i]) };
     });
     return rs;
   } catch (err) {

@@ -8,6 +8,7 @@ const slideConfig = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
+  dotsClass: 'slick-dots-sns',
 };
 
 const withSnsWrapper = (OriginComponent) => {
