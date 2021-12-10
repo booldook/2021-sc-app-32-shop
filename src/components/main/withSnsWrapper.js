@@ -1,3 +1,5 @@
+import React from 'react';
+
 const sns = {
   ride: [
     {
@@ -47,9 +49,18 @@ const sns = {
   ],
 };
 
+const slideConfig = {
+  dots: true,
+  infinite: true,
+  autoplay: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
 const withSnsWrapper = (OriginComponent) => {
   const Component = (props) => {
-    const combineProps = { ...props };
+    const combineProps = { ...props, list: sns[props.id], slideConfig };
     return <OriginComponent {...combineProps} />;
   };
   return Component;

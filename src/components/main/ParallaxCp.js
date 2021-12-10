@@ -16,4 +16,4 @@ const ParallaxCp = ({ banner, id }) => {
   );
 };
 
-export default withBannerWrapper(ParallaxCp);
+export default withBannerWrapper(React.memo(ParallaxCp));
