@@ -5,7 +5,8 @@ import { brandApi } from '../../modules/api';
 
 const Wrapper = styled.div``;
 const Brand = styled.div`
-  border: 1px solid red;
+  margin: 6em 0 3em 0;
+  padding: 0 1em;
   & img {
     width: 100%;
   }
