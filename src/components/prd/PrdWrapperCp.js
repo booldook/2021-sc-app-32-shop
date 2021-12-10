@@ -46,13 +46,11 @@ const loaderCss = css`
 
 const PrdWrapperCp = (props) => {
   return (
-    <div>
-      <PrdWrapper>
-        {props.prd.map((v, i) => (
-          <PrdCp {...v} key={i} />
-        ))}
-      </PrdWrapper>
-    </div>
+    <PrdWrapper>
+      {props.prd.map((v, i) => (
+        <PrdCp {...v} key={i} />
+      ))}
+    </PrdWrapper>
   );
 };
 
