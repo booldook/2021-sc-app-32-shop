@@ -1,12 +1,10 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import styled, { media, font, color, css } from '../../style';
+import React from 'react';
+import styled, { media } from '../../style';
 
 import withPrdWrapper from './withPrdWrapper';
-import { prdApi } from '../../modules/api';
 import PrdCp from './PrdCp';
-import ButtonCp from '../common/ButtonCp';
 
-const PrdWrapper = styled.ul`
+const Wrapper = styled.div`
   margin-top: 1em;
   display: flex;
   flex-wrap: wrap;
@@ -23,34 +21,14 @@ const PrdWrapper = styled.ul`
   }
 `;
 
-const Title = styled.h2`
-  font-size: 1.5em;
-  font-weight: 500;
-  font-family: ${font.en};
-  margin: 2em 0 1em 0;
-  text-align: center;
-`;
-
-const Button = styled(ButtonCp)`
-  display: block;
-  width: 200px;
-  margin: auto;
-  padding: 1em 0;
-`;
-
-const loaderCss = css`
-  display: block;
-  margin: 0 auto;
-  height: 80px;
-`;
-
 const PrdWrapperCp = (props) => {
+  console.log(props);
   return (
-    <PrdWrapper>
+    <Wrapper>
       {props.prd.map((v, i) => (
-        <PrdCp {...v} key={i} />
+        <PrdCp {...v} key={i} isList={true} />
       ))}
-    </PrdWrapper>
+    </Wrapper>
   );
 };
 

@@ -45,7 +45,7 @@ const withPrdWrapper = (OriginCompenent) => {
       setIsLoading(false);
     }, [page, prd]);
 
-    const combineProps = { ...props, prd, setPrd, isLoading, setIsLoading };
+    const combineProps = { ...props, prd };
     return (
       <div>
         <Title>{props.title}</Title>

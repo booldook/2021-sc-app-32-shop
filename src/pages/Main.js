@@ -10,6 +10,7 @@ import PrdWrapperCp from '../components/prd/PrdWrapperCp';
 import SurfWrapperCp from '../components/prd/SurfWrapperCp';
 import RideWrapperCp from '../components/main/RideWrapperCp';
 import InstaWrapperCp from '../components/main/InstaWrapperCp';
+import FeaturedPrdWrapperCp from '../components/prd/FeaturedPrdWrapperCp';
 
 const Wrapper = styled.div`
   margin: auto;
@@ -31,7 +32,7 @@ const Main = () => {
       <RideWrapperCp model="ride" id="244" />
       <Container>
         <InstaWrapperCp model="insta" id="245" />
-        {/* <FeaturedPrdWrapperCp title="Featured Products" /> */}
+        <FeaturedPrdWrapperCp title="Featured Products" />
       </Container>
     </Wrapper>
   );
