@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import styled, { media, font, color, css } from '../../style';
+import FadeLoader from 'react-spinners/FadeLoader';
 
-import withPrdWrapper from './withPrdWrapper';
 import { prdApi } from '../../modules/api';
 import PrdCp from './PrdCp';
 import ButtonCp from '../common/ButtonCp';
@@ -64,10 +64,17 @@ const PrdWrapperCp = () => {
 
   return (
     <div>
+      <Title>New Products</Title>
       <PrdWrapper>
         {prd.map((v, i) => (
           <PrdCp {...v} key={i} />
         ))}
+        <FadeLoader
+          color={color.primary}
+          loading={isLoading}
+          css={loaderCss}
+          size={60}
+        />
       </PrdWrapper>
       <Button
         txt="SHOW MORE"
@@ -80,4 +87,4 @@ const PrdWrapperCp = () => {
   );
 };
 
-export default withPrdWrapper(React.memo(PrdWrapperCp));
+export default React.memo(PrdWrapperCp);

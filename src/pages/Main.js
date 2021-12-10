@@ -24,13 +24,14 @@ const Main = () => {
         <BannerWrapperCp />
         <NoticeWrapperCp />
         <ParallaxCp id="242" />
-        <PrdWrapperCp />
+        <PrdWrapperCp title="New Products" />
         <CenterParallaxCp id="243" />
         <SurfWrapperCp />
       </Container>
       <RideWrapperCp model="ride" id="244" />
       <Container>
         <InstaWrapperCp model="insta" id="245" />
+        {/* <FeaturedPrdWrapperCp title="Featured Products" /> */}
       </Container>
     </Wrapper>
   );
