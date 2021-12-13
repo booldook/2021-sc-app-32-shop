@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 `;
 
 const ContentCp = ({ txt, link }) => {
-  return <Wrapper>{link ? <Link to={link}>{txt}</Link> : { txt }}</Wrapper>;
+  return <Wrapper>{link ? <Link to={link}>{txt}</Link> : txt}</Wrapper>;
 };
 
 export default React.memo(ContentCp);
