@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { color, Container } from '../../style';
+import CardCp from './CardCp';
 
 const Wrapper = styled.div`
   margin: 2em 0;
@@ -22,6 +23,7 @@ const CopyrightCp = () => {
         <Copyright>
           © 2021 Ella Demo. Powered by Shopify. Shopify Themes by HaloThemes.com
         </Copyright>
+        <CardCp />
       </Wrap>
     </Wrapper>
   );
