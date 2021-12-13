@@ -41,14 +41,53 @@ const Wrap = styled(Container)`
   }
 `;
 
+const menus = [
+  {
+    title: 'Sort By',
+    menu: [
+      { title: 'Appliances', link: '/' },
+      { title: 'Computers & Laptops', link: '/' },
+      { title: 'Cameras', link: '/' },
+      { title: 'Mobile Phones & Tablets', link: '/' },
+      { title: 'Televisions', link: '/' },
+      { title: 'Video Games & Systems', link: '/' },
+      { title: 'Weekly Deals', link: '/' },
+    ],
+  },
+  {
+    title: 'Information',
+    menu: [
+      { title: 'About us', link: '/' },
+      { title: 'Gift Certificates', link: '/' },
+      { title: 'Theme Styles', link: '/' },
+      { title: 'Contact us', link: '/' },
+      { title: 'Blog', link: '/' },
+      { title: 'Brands', link: '/' },
+      { title: 'Sitemap', link: '/' },
+    ],
+  },
+  {
+    title: 'Customer Service',
+    menu: [
+      { title: 'Help & FAQs', link: '/' },
+      { title: 'Terms of Conditions', link: '/' },
+      { title: 'Privacy Policy', link: '/' },
+      { title: 'Online Returns Policy', link: '/' },
+      { title: 'Rewards Program', link: '/' },
+      { title: 'Rebate Center', link: '/' },
+      { title: 'Partners', link: '/' },
+    ],
+  },
+];
+
 const FooterWrapperCp = () => {
   return (
     <Wrapper>
       <Wrap>
         <ContactCp />
-        <MenuWrapCp />
-        <MenuWrapCp />
-        <MenuWrapCp />
+        <MenuWrapCp {...menus[0]} />
+        <MenuWrapCp {...menus[1]} />
+        <MenuWrapCp {...menus[2]} />
         <EmailCp />
       </Wrap>
       <Container>
