@@ -4,7 +4,7 @@ import styled, { color } from '../../style';
 const Wrapper = styled.div``;
 
 const CardCp = () => {
-  return <Wrapper></Wrapper>;
+  return <Wrapper>Card</Wrapper>;
 };
 
 export default React.memo(CardCp);

@@ -4,7 +4,7 @@ import styled, { color } from '../../style';
 const Wrapper = styled.div``;
 
 const MenuWrapCp = () => {
-  return <Wrapper></Wrapper>;
+  return <Wrapper>Menu</Wrapper>;
 };
 
 export default React.memo(MenuWrapCp);
