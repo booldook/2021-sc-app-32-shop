@@ -20,11 +20,11 @@ const slideConfig = {
   slidesToScroll: 1,
 };
 
-const BrandCp = () => {
+const BrandCp = ({ boardId }) => {
   const [brand, setBrand] = useState([]);
   useEffect(() => {
     (async () => {
-      setBrand(await brandApi(4));
+      setBrand(await brandApi(boardId));
     })();
   }, []);
   return (

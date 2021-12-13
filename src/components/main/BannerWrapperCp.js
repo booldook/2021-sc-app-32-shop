@@ -12,10 +12,10 @@ const Wrapper = styled.section`
   padding-bottom: 3em;
 `;
 
-const BannerWrapperCp = () => {
+const BannerWrapperCp = ({ id }) => {
   const [banner, setBanner] = useState([]);
   useEffect(() => {
-    (async () => setBanner(await bannerApi(241)))();
+    (async () => setBanner(await bannerApi(id)))();
   }, []);
 
   const settings = {
