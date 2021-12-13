@@ -16,7 +16,7 @@ const BannerWrapperCp = ({ id }) => {
   const [banner, setBanner] = useState([]);
   useEffect(() => {
     (async () => setBanner(await bannerApi(id)))();
-  }, []);
+  }, [id]);
 
   const settings = {
     dots: true,

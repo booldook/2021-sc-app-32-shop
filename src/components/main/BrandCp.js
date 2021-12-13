@@ -26,7 +26,7 @@ const BrandCp = ({ boardId }) => {
     (async () => {
       setBrand(await brandApi(boardId));
     })();
-  }, []);
+  }, [boardId]);
   return (
     <Wrapper>
       <Slider {...slideConfig}>
