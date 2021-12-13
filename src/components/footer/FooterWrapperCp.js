@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { color, Container, media, font } from '../../style';
 import ContactCp from './ContactCp';
 import MenuWrapCp from './MenuWrapCp';
-import EmailCp from './EmailCp';
+import EmailWrapCp from './EmailWrapCp';
 import CopyrightCp from './CopyrightCp';
 
 const Wrapper = styled.footer`
@@ -88,7 +88,7 @@ const FooterWrapperCp = () => {
         <MenuWrapCp {...menus[0]} />
         <MenuWrapCp {...menus[1]} />
         <MenuWrapCp {...menus[2]} />
-        <EmailCp />
+        <EmailWrapCp />
       </Wrap>
       <Container>
         <CopyrightCp />
