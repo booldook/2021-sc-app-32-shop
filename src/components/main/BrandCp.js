@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import styled, { media } from '../../style';
+import styled, { media, Container } from '../../style';
 import Slider from 'react-slick';
 import { brandApi } from '../../modules/api';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  background-color: #1e1f1c;
+`;
 const Brand = styled.div`
   margin: 6em 0 3em 0;
   padding: 0 1em;
@@ -29,13 +31,15 @@ const BrandCp = ({ boardId }) => {
   }, [boardId]);
   return (
     <Wrapper>
-      <Slider {...slideConfig}>
-        {brand.map((v, i) => (
-          <Brand key={i}>
-            <img src={v.src} alt={v.id} />
-          </Brand>
-        ))}
-      </Slider>
+      <Container>
+        <Slider {...slideConfig}>
+          {brand.map((v, i) => (
+            <Brand key={i}>
+              <img src={v.src} alt={v.id} />
+            </Brand>
+          ))}
+        </Slider>
+      </Container>
     </Wrapper>
   );
 };
